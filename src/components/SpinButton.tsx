@@ -47,6 +47,8 @@ const SpinButton: React.FC<{ target: string }> = ({ target }) => {
         <input
           type='text'
           role='spinbutton'
+          aria-live='polite'
+          aria-atomic="true"
           readOnly
           className='spinButtonInput'
           value={count}
