@@ -24,12 +24,17 @@ const SpinButton: React.FC<{ target: string }> = ({ target }) => {
         <div className='spinButtonLabel'>
           <label>{target}</label>
           <div
-            role='contentinfo'
+            role='alertdialog'
             className='helpIcon'
             onMouseEnter={toggleTooltip}
             onMouseLeave={toggleTooltip}
           >
-            ?{isTooltipVisible && <span className='tooltip'>최대 인원수는 3명까지 가능합니다</span>}
+            ?
+            {isTooltipVisible && (
+              <span className='tooltip' role='alertdialog' aria-live='assertive'>
+                최대 인원수는 3명까지 가능합니다
+              </span>
+            )}
           </div>
         </div>
         <button
