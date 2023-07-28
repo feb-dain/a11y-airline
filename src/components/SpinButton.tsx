@@ -4,7 +4,6 @@ import './SpinButton.css';
 const SpinButton: React.FC<{ target: string }> = ({ target }) => {
   const [count, setCount] = useState<number>(0);
   const [isTooltipVisible, setIsTooltipVisible] = useState<boolean>(false);
-  
 
   const increment = () => {
     setCount((prevCount) => prevCount + 1);
@@ -24,12 +23,7 @@ const SpinButton: React.FC<{ target: string }> = ({ target }) => {
         <h1>승객 선택</h1>
         <div className='spinButtonLabel'>
           <label>{target}</label>
-          <div
-            role='alertdialog'
-            className='helpIcon'
-            onMouseEnter={toggleTooltip}
-            onMouseLeave={toggleTooltip}
-          >
+          <div className='helpIcon' onMouseEnter={toggleTooltip} onMouseLeave={toggleTooltip}>
             ?
             {isTooltipVisible && (
               <span className='tooltip' role='alertdialog' aria-live='assertive'>
@@ -42,6 +36,7 @@ const SpinButton: React.FC<{ target: string }> = ({ target }) => {
           onClick={decrement}
           className='spinButton'
           aria-label='성인 탑승자 한명 줄이기 버튼'
+          disabled={count === 1 ? true : false}
         >
           -
         </button>
@@ -49,7 +44,7 @@ const SpinButton: React.FC<{ target: string }> = ({ target }) => {
           type='text'
           role='spinbutton'
           aria-live='polite'
-          aria-atomic="true"
+          aria-atomic='true'
           readOnly
           className='spinButtonInput'
           value={count}
@@ -59,6 +54,7 @@ const SpinButton: React.FC<{ target: string }> = ({ target }) => {
           onClick={increment}
           className='spinButton'
           aria-label='성인 탑승자 한명 늘리기 버튼'
+          disabled={count === 3 ? true : false}
         >
           +
         </button>
