@@ -4,6 +4,7 @@ import './SpinButton.css';
 const SpinButton: React.FC<{ target: string }> = ({ target }) => {
   const [count, setCount] = useState<number>(0);
   const [isTooltipVisible, setIsTooltipVisible] = useState<boolean>(false);
+  
 
   const increment = () => {
     setCount((prevCount) => prevCount + 1);
@@ -52,7 +53,7 @@ const SpinButton: React.FC<{ target: string }> = ({ target }) => {
           readOnly
           className='spinButtonInput'
           value={count}
-          aria-label={`${target} ${count} 텍스트 숫자만 수정`}
+          aria-label={`${target} 승객 추가 ${count}`}
         />
         <button
           onClick={increment}
