@@ -42,11 +42,6 @@ jobs:
       - name: Build App
         run: npm run build
 
-      - name: Build Storybook
-        run: |
-          npm run build-storybook
-          mv ./storybook-static ./build/storybook
-
       - name: Deploy To 'gh-pages' Branch
         uses: peaceiris/actions-gh-pages@v3
         with:
