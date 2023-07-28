@@ -26,7 +26,7 @@ const SpinButton: React.FC<{ target: string }> = ({ target }) => {
           <div className='helpIcon' onMouseEnter={toggleTooltip} onMouseLeave={toggleTooltip}>
             ?
             {isTooltipVisible && (
-              <span className='tooltip' role='alertdialog' aria-live='assertive'>
+              <span hidden className='tooltip' role='alertdialog' aria-live='assertive'>
                 최대 인원수는 3명까지 가능합니다
               </span>
             )}
@@ -48,7 +48,7 @@ const SpinButton: React.FC<{ target: string }> = ({ target }) => {
           readOnly
           className='spinButtonInput'
           value={count}
-          aria-label={`${target} 승객 추가 ${count}`}
+          aria-label={`${target} 승객 ${count}명이 추가되어 있습니다`}
         />
         <button
           onClick={increment}
