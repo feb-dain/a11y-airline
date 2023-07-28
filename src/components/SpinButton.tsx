@@ -36,7 +36,8 @@ const SpinButton: React.FC<{ target: string }> = ({ target }) => {
           onClick={decrement}
           className='spinButton'
           aria-label='성인 탑승자 한명 줄이기 버튼'
-          disabled={count === 1 ? true : false}
+          disabled={count === 1}
+          aria-disabled={count === 1}
         >
           -
         </button>
@@ -54,7 +55,8 @@ const SpinButton: React.FC<{ target: string }> = ({ target }) => {
           onClick={increment}
           className='spinButton'
           aria-label='성인 탑승자 한명 늘리기 버튼'
-          disabled={count === 3 ? true : false}
+          disabled={count === 3}
+          aria-disabled={count === 3}
         >
           +
         </button>
