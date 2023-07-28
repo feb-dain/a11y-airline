@@ -26,7 +26,7 @@ const SpinButton: React.FC<{ target: string }> = ({ target }) => {
           <div className='helpIcon' onMouseEnter={toggleTooltip} onMouseLeave={toggleTooltip}>
             ?
             {isTooltipVisible && (
-              <span hidden className='tooltip' role='alertdialog' aria-live='assertive'>
+              <span className='tooltip' role='alertdialog' aria-live='assertive'>
                 최대 인원수는 3명까지 가능합니다
               </span>
             )}
